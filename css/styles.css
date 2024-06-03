@@ -5,21 +5,22 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background: url('../background.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 .container {
     display: flex;
-    gap: 20px;
+    gap: 40px; /* Increase gap as boxes are now larger */
 }
 
 .box {
-    width: 100px;
-    height: 100px;
+    width: 200px; /* Double the original width */
+    height: 200px; /* Double the original height */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 4rem; /* Double the original font size */
     cursor: pointer;
     background-color: #fff;
     border: 2px solid #ccc;
@@ -44,4 +45,3 @@ body {
     color: #333;
     text-align: center;
 }
-
