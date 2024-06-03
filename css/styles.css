@@ -11,7 +11,9 @@ body {
 
 .container {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap; /* Allow boxes to wrap to next line on small screens */
+    justify-content: center;
+    gap: 20px; /* Adjust gap between boxes */
 }
 
 .box {
@@ -25,21 +27,21 @@ body {
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow */
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; /* Add box-shadow transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
     position: relative;
 }
 
 #box1 {
-    background-color: #ffe6f2; /* Lighter pastel pink */
+    background-color: #ffe6f2;
 }
 
 #box2 {
-    background-color: #e6f7ff; /* Lighter pastel blue */
+    background-color: #e6f7ff;
 }
 
 #box3 {
-    background-color: #e6ffeb; /* Lighter pastel green */
+    background-color: #e6ffeb;
 }
 
 .box:hover {
@@ -48,7 +50,7 @@ body {
 }
 
 .box.opened {
-    background-color: #f9f9f9; /* Change background color when opened */
+    background-color: #f9f9f9;
 }
 
 .box.opened .message {
@@ -64,4 +66,16 @@ body {
     font-size: 1rem;
     color: #333;
     text-align: center;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack boxes vertically on small screens */
+        align-items: center; /* Center boxes horizontally */
+    }
+
+    .box {
+        width: 80%; /* Make boxes occupy 80% of the screen width */
+    }
 }
