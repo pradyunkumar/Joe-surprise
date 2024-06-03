@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     const boxes = document.querySelectorAll('.box');
     const messages = [
-        "You are amazing!",
-        "You make me smile every day!",
-        "I love you more than words can say!"
+        "dis card is good for: 5 bobas on me :)",
+        "dis card is good for: my everlasting love for u and commitment to be better for us :)",
+        "dis card is good for: a fancy romantic dinner date + flowers"
     ];
 
     boxes.forEach((box, index) => {
@@ -14,12 +14,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
             box.innerHTML = ''; // Clear the box content
             box.appendChild(messageElement);
             messageElement.style.display = 'block';
-            confetti({
+            
+            let confettiOptions = {
                 particleCount: 100,
-                spread: 70,
-                origin: { y: 1.0 }
-            });
+                spread: 70
+            };
+
+            switch (index) {
+                case 0:
+                    confettiOptions.origin = { x: 0, y: 0.5 };
+                    break;
+                case 1:
+                    confettiOptions.origin = { x: 0.5, y: 0.5 };
+                    confettiOptions.spread = 360;
+                    break;
+                case 2:
+                    confettiOptions.origin = { x: 1, y: 0.5 };
+                    break;
+            }
+
+            confetti(confettiOptions);
         });
     });
 });
-

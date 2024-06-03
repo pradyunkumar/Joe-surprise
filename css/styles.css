@@ -11,28 +11,48 @@ body {
 
 .container {
     display: flex;
-    gap: 40px; /* Increase gap as boxes are now larger */
+    gap: 40px;
 }
 
 .box {
-    width: 200px; /* Double the original width */
-    height: 200px; /* Double the original height */
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem; /* Double the original font size */
+    font-size: 4rem;
     cursor: pointer;
     background-color: #fff;
     border: 2px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; /* Add box-shadow transition */
     position: relative;
+}
+
+#box1 {
+    background-color: #ffe6f2; /* Lighter pastel pink */
+}
+
+#box2 {
+    background-color: #e6f7ff; /* Lighter pastel blue */
+}
+
+#box3 {
+    background-color: #e6ffeb; /* Lighter pastel green */
 }
 
 .box:hover {
     transform: scale(1.1);
     background-color: #f9f9f9;
+}
+
+.box.opened {
+    background-color: #f9f9f9; /* Change background color when opened */
+}
+
+.box.opened .message {
+    display: block;
 }
 
 .box .message {
